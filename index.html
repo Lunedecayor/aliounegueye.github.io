@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Alioune Badara GUEYE | Expert IA & Gestion Documentaire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .header-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header-info .title {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .header-info .specialties {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-container a {
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .nav-container a:hover {
+            background: #1e3c72;
+            color: white;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2a5298;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #2a5298;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #2a5298;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            border-left: 4px solid #2a5298;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            background: #e3f2fd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #2a5298;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-org {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-top: 4px solid #2a5298;
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.7rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #2a5298;
+            transition: all 0.3s;
+        }
+
+        .skill-list li:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .publications {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .publication-item {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .publication-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-details {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .education-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #2a5298;
+            transition: all 0.3s;
+        }
+
+        .education-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .degree {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .institution {
+            color: #2a5298;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .year {
+            color: #666;
+            font-weight: bold;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .cert-badge {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #e3f2fd;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .cert-badge:hover {
+            border-color: #2a5298;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cert-year {
+            font-weight: bold;
+            color: #2a5298;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-method a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .contact-method a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-info h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .nav-container {
+                gap: 0.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-photo">ABG</div>
+                <div class="header-info">
+                    <h1>Dr. Alioune Badara GUEYE</h1>
+                    <div class="title">Expert en Gestion Documentaire & Intelligence Artificielle</div>
+                    <div class="specialties">Transformation Digitale | Data Management | IA & TALN</div>
+                    <div class="contact-info">
+                        <span>📍 Bordeaux, France</span>
+                        <a href="tel:0646560339">📞 06 46 56 03 39</a>
+                        <a href="mailto:badoura313@gmail.com">✉️ badoura313@gmail.com</a>
+                        <a href="https://linkedin.com/in/aliounebadaragueye313" target="_blank">🔗 LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#profil">Profil</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#competences">Compétences</a>
+            <a href="#formation">Formation</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="profil" class="fade-in">
+            <h2>Profil Professionnel</h2>
+            <div class="highlight-box">
+                <p><strong>Docteur en Sciences du Langage</strong> avec plus de 5 ans d'expérience en gestion documentaire, archivage numérique et valorisation de données textuelles.</p>
+                <p>Expert en <strong>transformation digitale</strong> des systèmes d'information documentaire pour bibliothèques, musées, banques et institutions publiques.</p>
+                <p>Spécialisé dans l'<strong>Intelligence Artificielle appliquée aux documents</strong> : extraction automatique d'information, indexation intelligente, veille stratégique et traitement automatique du langage naturel (TALN).</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Années d'Expérience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Organisations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Données Valorisées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Continents</div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left-color: #ff6f00;">
+                <p style="font-size: 1.2rem; font-weight: 600;">🎯 Objectif Stratégique</p>
+                <p>Exploiter l'IA et le Big Data textuel pour transformer 80% de données dormantes en actifs stratégiques décisionnels.</p>
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2>Domaines d'Expertise</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🗂️ Gestion Documentaire & Archivistique</h3>
+                    <ul class="skill-list">
+                        <li><strong>Normes :</strong> ISO 15489, ISO 30300, ISAD(G), EAD, Dublin Core, UNIMARC</li>
+                        <li><strong>Systèmes :</strong> SIGB (Absys, SUDOC), GED, ECM</li>
+                        <li><strong>Méthodologies :</strong> Plan de classement, indexation contrôlée, thésaurus</li>
+                        <li><strong>Cycle de vie :</strong> Collecte, traitement, conservation, valorisation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🤖 Intelligence Artificielle & TALN</h3>
+                    <ul class="skill-list">
+                        <li><strong>IA & TALN :</strong> NLP, Text Mining, Extraction d'entités</li>
+                        <li><strong>Classification :</strong> Automatique de documents</li>
+                        <li><strong>Outils :</strong> Python, Linguistique de corpus</li>
+                        <li><strong>Applications :</strong> Veille stratégique, Intelligence documentaire</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📊 Data Management & Big Data</h3>
+                    <ul class="skill-list">
+                        <li><strong>Bases de données :</strong> Textuelles et structurées</li>
+                        <li><strong>Knowledge Management :</strong> Gestion des connaissances</li>
+                        <li><strong>Big Data :</strong> Traitement de volumes massifs</li>
+                        <li><strong>Analyse :</strong> Sémantique et ontologies</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🌐 Compétences Transversales</h3>
+                    <ul class="skill-list">
+                        <li><strong>Gestion de projet :</strong> Conduite, audit, migration</li>
+                        <li><strong>Communication :</strong> Formation, rédaction, présentation</li>
+                        <li><strong>Langues :</strong> Français (natif), Anglais (bilingue), Wolof (natif)</li>
+                        <li><strong>Transformation digitale :</strong> Stratégie et implémentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="parcours">
+            <h2>Parcours Professionnel</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 – Présent</div>
+                    <div class="timeline-title">Chercheur Associé – IA & Analyse du Discours</div>
+                    <div class="timeline-org">Université Bordeaux Montaigne | Unité de recherche Plurielles (UR 24142)</div>
+                    <ul class="timeline-description">
+                        <li>Recherche appliquée en analyse automatique de corpus textuels et linguistique computationnelle</li>
+                        <li>Développement de méthodologies d'extraction de données et d'analyse sémantique</li>
+                        <li>Publication scientifique sur l'analyse de discours politiques</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2016 – 2017</div>
+                    <div class="timeline-title">Bibliothécaire-Documentaliste</div>
+                    <div class="timeline-org">Bibliothèque Guillemin, Bordeaux</div>
+                    <ul class="timeline-description">
+                        <li>Catalogage professionnel au format UNIMARC et normalisation de métadonnées</li>
+                        <li>Conception et déploiement d'un plan de classement optimisé</li>
+                        <li>Amélioration de la recherche documentaire et de l'accessibilité des collections</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2015 – 2016</div>
+                    <div class="timeline-title">Gestionnaire de Fonds Documentaires</div>
+                    <div class="timeline-org">Musée du Temps, Besançon</div>
+                    <ul class="timeline-description">
+                        <li>Administration du SIGB Absys et gestion de base de données bibliographiques</li>
+                        <li>Indexation contrôlée et enrichissement de notices catalographiques</li>
+                        <li>Support aux utilisateurs et formation à la recherche documentaire</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2015</div>
+                    <div class="timeline-title">Bibliothécaire-Documentaliste</div>
+                    <div class="timeline-org">Service Action Culturelle – Citadelle, Besançon</div>
+                    <ul class="timeline-description">
+                        <li>Organisation et structuration complète d'un fonds documentaire patrimonial</li>
+                        <li>Création d'un système d'indexation et plan de cotation rationalisé</li>
+                        <li>Valorisation des collections et mise en place d'outils de recherche</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2011 – 2012</div>
+                    <div class="timeline-title">Spécialiste Traitement de Corpus</div>
+                    <div class="timeline-org">Laboratoire LASELDI – Université de Franche-Comté</div>
+                    <ul class="timeline-description">
+                        <li>Segmentation linguistique et annotation de corpus textuels de recherche</li>
+                        <li>Saisie et normalisation de métadonnées structurées pour analyse computationnelle</li>
+                        <li>Contrôle qualité et validation de données linguistiques</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2010 – 2011</div>
+                    <div class="timeline-title">Archiviste-Documentaliste Digital</div>
+                    <div class="timeline-org">Cabinet ORGEINFO, Dakar</div>
+                    <ul class="timeline-description">
+                        <li>Collecte et structuration de données pour portail gouvernemental</li>
+                        <li>Rédaction de contenus web et gestion éditoriale</li>
+                        <li>Organisation de l'information et architecture documentaire</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2010</div>
+                    <div class="timeline-title">Archiviste – Records Manager</div>
+                    <div class="timeline-org">Citibank Sénégal, Dakar</div>
+                    <ul class="timeline-description">
+                        <li>Reconditionnement et reclassement intégral du fonds d'archives bancaires</li>
+                        <li>Mise en conformité avec normes de conservation et sécurité</li>
+                        <li>Optimisation de l'accessibilité et traçabilité documentaire</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2007</div>
+                    <div class="timeline-title">Interprète & Coordinateur Linguistique</div>
+                    <div class="timeline-org">China Geoengineering Corporation, Dakar</div>
+                    <ul class="timeline-description">
+                        <li>Traduction technique Anglais-Français en environnement international</li>
+                        <li>Rédaction de rapports de chantier et documentation technique</li>
+                        <li>Facilitation de communication interculturelle et gestion de réunions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="formation">
+            <h2>Formation Académique</h2>
+            
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="degree">🎓 Doctorat en Sciences du Langage</div>
+                    <div class="institution">Université Bordeaux Montaigne</div>
+                    <div>Spécialité : Linguistique & Analyse du Discours</div>
+                    <div class="year">2021</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">🎓 Master Sciences du Langage</div>
+                    <div class="institution">Université de Franche-Comté</div>
+                    <div>Parcours : Discours, Texte et Communication</div>
+                    <div class="year">2015</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">🎓 Master Recherche – Sciences de l'Information et Communication</div>
+                    <div class="institution">Consortium Lyon-Saint-Étienne</div>
+                    <div>Université Lumière Lyon 2, Université Saint-Étienne, ENSSIB, ENS de Lyon</div>
+                    <div class="year">2014</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">🎓 Maîtrise Sciences du Langage</div>
+                    <div class="institution">Université de Franche-Comté</div>
+                    <div class="year">2012</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">🎓 Master Ingénierie Documentaire</div>
+                    <div class="institution">EBAD – Université Cheikh Anta Diop, Dakar</div>
+                    <div>Spécialité : Sciences de l'Information Documentaire</div>
+                    <div class="year">2010</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Certifications & Formations Continues</h3>
+            <div class="certifications">
+                <div class="cert-badge">
+                    <div class="cert-year">2024</div>
+                    <div>IA et Publication : Enjeux Réglementaires et Éthiques</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-year">2024</div>
+                    <div>IA et Recherche Documentaire – Formation de formateurs</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-year">2024</div>
+                    <div>Introduction à la Linguistique de Corpus</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-year">2023</div>
+                    <div>Document Control: From Principles to Practice</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-year">2022</div>
+                    <div>Réussir sa Présentation et Captiver son Auditoire</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications Scientifiques</h2>
+            <div class="publications">
+                <div class="publication-item">
+                    <div class="publication-title">« Saillances ou connaissance du corpus ? »</div>
+                    <div class="publication-details">In : Nouvelles voix/voies des discours politiques en Afrique francophone</div>
+                    <div style="color: #555; margin-top: 0.5rem;">Contribution à l'analyse computationnelle du discours politique</div>
+                    <div style="color: #2a5298; font-weight: 600; margin-top: 0.5rem;">2024</div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <p><strong>Recherche en cours :</strong></p>
+                <p>Travaux sur l'Intelligence Artificielle appliquée à l'analyse du discours, l'extraction automatique d'informations et la valorisation des données textuelles massives dans des contextes institutionnels et académiques.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contactez-moi</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Intéressé par une collaboration ? Discutons de vos projets de transformation digitale et d'intelligence documentaire.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="contact-icon">📧</div>
+                    <a href="mailto:badoura313@gmail.com">badoura313@gmail.com</a>
+                </div>
+                <div class="contact-method">
