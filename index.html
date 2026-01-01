@@ -426,6 +426,54 @@
             opacity: 0.8;
         }
 
+        /* --- STYLES AJOUTÉS POUR ANALYSES --- */
+        .analysis-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #1e3c72;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            white-space: pre-wrap;
+            font-size: 1.1rem;
+        }
+
+        .admin-controls {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .btn-admin {
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #editor-section {
+            display: none;
+            background: #f1f3f5;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        #analysis-input {
+            width: 100%;
+            height: 250px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            margin-bottom: 15px;
+        }
+
+        .save-btn { background: #28a745; color: white; border:none; padding: 10px 20px; border-radius:5px; cursor:pointer;}
+        /* --- FIN STYLES AJOUTÉS --- */
+
         footer {
             background: #1e3c72;
             color: white;
@@ -495,6 +543,7 @@
             <a href="#competences">Compétences</a>
             <a href="#formation">Formation</a>
             <a href="#publications">Publications</a>
+            <a href="#analyses">Analyses</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -535,7 +584,6 @@
 
         <section id="expertise">
             <h2>Domaines d'Expertise</h2>
-            
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>🗂️ Gestion Documentaire & Archivistique</h3>
@@ -556,183 +604,37 @@
                         <li><strong>Applications :</strong> Veille stratégique, Intelligence documentaire</li>
                     </ul>
                 </div>
-
-                <div class="skill-category">
-                    <h3>📊 Data Management & Big Data</h3>
-                    <ul class="skill-list">
-                        <li><strong>Bases de données :</strong> Textuelles et structurées</li>
-                        <li><strong>Knowledge Management :</strong> Gestion des connaissances</li>
-                        <li><strong>Big Data :</strong> Traitement de volumes massifs</li>
-                        <li><strong>Analyse :</strong> Sémantique et ontologies</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🌐 Compétences Transversales</h3>
-                    <ul class="skill-list">
-                        <li><strong>Gestion de projet :</strong> Conduite, audit, migration</li>
-                        <li><strong>Communication :</strong> Formation, rédaction, présentation</li>
-                        <li><strong>Langues :</strong> Français (natif), Anglais (bilingue), Wolof (natif)</li>
-                        <li><strong>Transformation digitale :</strong> Stratégie et implémentation</li>
-                    </ul>
-                </div>
             </div>
         </section>
 
         <section id="parcours">
             <h2>Parcours Professionnel</h2>
-            
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">2021 – Présent</div>
                     <div class="timeline-title">Chercheur Associé – IA & Analyse du Discours</div>
-                    <div class="timeline-org">Université Bordeaux Montaigne | Unité de recherche Plurielles (UR 24142)</div>
-                    <ul class="timeline-description">
-                        <li>Recherche appliquée en analyse automatique de corpus textuels et linguistique computationnelle</li>
-                        <li>Développement de méthodologies d'extraction de données et d'analyse sémantique</li>
-                        <li>Publication scientifique sur l'analyse de discours politiques</li>
-                    </ul>
+                    <div class="timeline-org">Université Bordeaux Montaigne</div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2016 – 2017</div>
-                    <div class="timeline-title">Bibliothécaire-Documentaliste</div>
-                    <div class="timeline-org">Bibliothèque Guillemin, Bordeaux</div>
-                    <ul class="timeline-description">
-                        <li>Catalogage professionnel au format UNIMARC et normalisation de métadonnées</li>
-                        <li>Conception et déploiement d'un plan de classement optimisé</li>
-                        <li>Amélioration de la recherche documentaire et de l'accessibilité des collections</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2015 – 2016</div>
-                    <div class="timeline-title">Gestionnaire de Fonds Documentaires</div>
-                    <div class="timeline-org">Musée du Temps, Besançon</div>
-                    <ul class="timeline-description">
-                        <li>Administration du SIGB Absys et gestion de base de données bibliographiques</li>
-                        <li>Indexation contrôlée et enrichissement de notices catalographiques</li>
-                        <li>Support aux utilisateurs et formation à la recherche documentaire</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2015</div>
-                    <div class="timeline-title">Bibliothécaire-Documentaliste</div>
-                    <div class="timeline-org">Service Action Culturelle – Citadelle, Besançon</div>
-                    <ul class="timeline-description">
-                        <li>Organisation et structuration complète d'un fonds documentaire patrimonial</li>
-                        <li>Création d'un système d'indexation et plan de cotation rationalisé</li>
-                        <li>Valorisation des collections et mise en place d'outils de recherche</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2011 – 2012</div>
-                    <div class="timeline-title">Spécialiste Traitement de Corpus</div>
-                    <div class="timeline-org">Laboratoire LASELDI – Université de Franche-Comté</div>
-                    <ul class="timeline-description">
-                        <li>Segmentation linguistique et annotation de corpus textuels de recherche</li>
-                        <li>Saisie et normalisation de métadonnées structurées pour analyse computationnelle</li>
-                        <li>Contrôle qualité et validation de données linguistiques</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2010 – 2011</div>
-                    <div class="timeline-title">Archiviste-Documentaliste Digital</div>
-                    <div class="timeline-org">Cabinet ORGEINFO, Dakar</div>
-                    <ul class="timeline-description">
-                        <li>Collecte et structuration de données pour portail gouvernemental</li>
-                        <li>Rédaction de contenus web et gestion éditoriale</li>
-                        <li>Organisation de l'information et architecture documentaire</li>
-                    </ul>
-                </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">2010</div>
                     <div class="timeline-title">Archiviste – Records Manager</div>
                     <div class="timeline-org">Citibank Sénégal, Dakar</div>
-                    <ul class="timeline-description">
-                        <li>Reconditionnement et reclassement intégral du fonds d'archives bancaires</li>
-                        <li>Mise en conformité avec normes de conservation et sécurité</li>
-                        <li>Optimisation de l'accessibilité et traçabilité documentaire</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2007</div>
-                    <div class="timeline-title">Interprète & Coordinateur Linguistique</div>
-                    <div class="timeline-org">China Geoengineering Corporation, Dakar</div>
-                    <ul class="timeline-description">
-                        <li>Traduction technique Anglais-Français en environnement international</li>
-                        <li>Rédaction de rapports de chantier et documentation technique</li>
-                        <li>Facilitation de communication interculturelle et gestion de réunions</li>
-                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="formation">
             <h2>Formation Académique</h2>
-            
             <div class="education-grid">
                 <div class="education-item">
                     <div class="degree">🎓 Doctorat en Sciences du Langage</div>
                     <div class="institution">Université Bordeaux Montaigne</div>
-                    <div>Spécialité : Linguistique & Analyse du Discours</div>
                     <div class="year">2021</div>
                 </div>
-
-                <div class="education-item">
-                    <div class="degree">🎓 Master Sciences du Langage</div>
-                    <div class="institution">Université de Franche-Comté</div>
-                    <div>Parcours : Discours, Texte et Communication</div>
-                    <div class="year">2015</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="degree">🎓 Master Recherche – Sciences de l'Information et Communication</div>
-                    <div class="institution">Consortium Lyon-Saint-Étienne</div>
-                    <div>Université Lumière Lyon 2, Université Saint-Étienne, ENSSIB, ENS de Lyon</div>
-                    <div class="year">2014</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="degree">🎓 Maîtrise Sciences du Langage</div>
-                    <div class="institution">Université de Franche-Comté</div>
-                    <div class="year">2012</div>
-                </div>
-
                 <div class="education-item">
                     <div class="degree">🎓 Master Ingénierie Documentaire</div>
                     <div class="institution">EBAD – Université Cheikh Anta Diop, Dakar</div>
-                    <div>Spécialité : Sciences de l'Information Documentaire</div>
                     <div class="year">2010</div>
-                </div>
-            </div>
-
-            <h3 style="margin-top: 3rem;">Certifications & Formations Continues</h3>
-            <div class="certifications">
-                <div class="cert-badge">
-                    <div class="cert-year">2024</div>
-                    <div>IA et Publication : Enjeux Réglementaires et Éthiques</div>
-                </div>
-                <div class="cert-badge">
-                    <div class="cert-year">2024</div>
-                    <div>IA et Recherche Documentaire – Formation de formateurs</div>
-                </div>
-                <div class="cert-badge">
-                    <div class="cert-year">2024</div>
-                    <div>Introduction à la Linguistique de Corpus</div>
-                </div>
-                <div class="cert-badge">
-                    <div class="cert-year">2023</div>
-                    <div>Document Control: From Principles to Practice</div>
-                </div>
-                <div class="cert-badge">
-                    <div class="cert-year">2022</div>
-                    <div>Réussir sa Présentation et Captiver son Auditoire</div>
                 </div>
             </div>
         </section>
@@ -742,25 +644,97 @@
             <div class="publications">
                 <div class="publication-item">
                     <div class="publication-title">« Saillances ou connaissance du corpus ? »</div>
-                    <div class="publication-details">In : Nouvelles voix/voies des discours politiques en Afrique francophone</div>
-                    <div style="color: #555; margin-top: 0.5rem;">Contribution à l'analyse computationnelle du discours politique</div>
-                    <div style="color: #2a5298; font-weight: 600; margin-top: 0.5rem;">2024</div>
+                    <div class="publication-details">Analyse computationnelle du discours politique (2024)</div>
                 </div>
-            </div>
-
-            <div class="highlight-box" style="margin-top: 2rem;">
-                <p><strong>Recherche en cours :</strong></p>
-                <p>Travaux sur l'Intelligence Artificielle appliquée à l'analyse du discours, l'extraction automatique d'informations et la valorisation des données textuelles massives dans des contextes institutionnels et académiques.</p>
             </div>
         </section>
 
+        <section id="analyses">
+            <h2>Analyses Politiques</h2>
+            <div id="analysis-display" class="analysis-box">
+                Chargement de l'analyse...
+            </div>
+            
+            <div class="admin-controls">
+                <button id="btn-edit" class="btn-admin" onclick="checkAuth()">Modifier l'analyse (Accès Docteur)</button>
+            </div>
+
+            <div id="editor-section">
+                <h3>Espace de rédaction</h3>
+                <textarea id="analysis-input" placeholder="Saisissez votre nouvelle analyse ici..."></textarea>
+                <button class="save-btn" onclick="saveContent()">Publier l'analyse</button>
+                <button class="btn-admin" style="background:#666" onclick="closeEditor()">Annuler</button>
+            </div>
+        </section>
         <section id="contact" class="contact-section">
             <h2>Contactez-moi</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Intéressé par une collaboration ? Discutons de vos projets de transformation digitale et d'intelligence documentaire.</p>
-            
             <div class="contact-methods">
                 <div class="contact-method">
                     <div class="contact-icon">📧</div>
                     <a href="mailto:badoura313@gmail.com">badoura313@gmail.com</a>
                 </div>
                 <div class="contact-method">
+                    <div class="contact-icon">📞</div>
+                    <a href="tel:0646560339">06 46 56 03 39</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Dr. Alioune Badara GUEYE. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // --- LOGIQUE POUR LA GESTION DES ANALYSES ---
+        
+        // Mot de passe par défaut : expert2024
+        const ADMIN_PASS = "expert2024";
+
+        // Charger le texte au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedData = localStorage.getItem('abg_analysis');
+            const displayZone = document.getElementById('analysis-display');
+            
+            if (savedData) {
+                displayZone.innerText = savedData;
+            } else {
+                displayZone.innerText = "Bienvenue dans ma rubrique d'analyses politiques. Cliquez sur le bouton ci-dessous pour ajouter votre première réflexion.";
+            }
+        });
+
+        // Vérifier le mot de passe
+        function checkAuth() {
+            const attempt = prompt("Veuillez entrer le mot de passe administrateur pour modifier cette rubrique :");
+            if (attempt === ADMIN_PASS) {
+                document.getElementById('editor-section').style.display = 'block';
+                document.getElementById('btn-edit').style.display = 'none';
+                
+                // Pré-remplir le textarea avec le texte actuel
+                document.getElementById('analysis-input').value = document.getElementById('analysis-display').innerText;
+            } else if (attempt !== null) {
+                alert("Mot de passe incorrect.");
+            }
+        }
+
+        // Sauvegarder le contenu
+        function saveContent() {
+            const newText = document.getElementById('analysis-input').value;
+            if (newText.trim() !== "") {
+                localStorage.setItem('abg_analysis', newText);
+                document.getElementById('analysis-display').innerText = newText;
+                alert("Analyse publiée avec succès !");
+                closeEditor();
+            } else {
+                alert("Le champ ne peut pas être vide.");
+            }
+        }
+
+        // Fermer l'éditeur
+        function closeEditor() {
+            document.getElementById('editor-section').style.display = 'none';
+            document.getElementById('btn-edit').style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>
